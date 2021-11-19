@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: $font-sans-serif;
+    background-image: url("https://images.cnblogs.com/cnblogs_com/blogs/700939/galleries/2065578/o_211119210140_bg.png");
+}
+
 // 重构页面整体的响应式结构
 // ------------------------------------
 

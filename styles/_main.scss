@@ -1,9 +1,11 @@
 // ============================================================================
-// 样式表
+// 主体内容区
 // ============================================================================
 
-@import "variables";
-@import "global";
-@import "header";
-@import "footer";
-@import "main";
+#body {
+    box-shadow: $box-shadow-sm;
+
+    > .hui-main {
+        background-color: #fff;
+    }
+}
