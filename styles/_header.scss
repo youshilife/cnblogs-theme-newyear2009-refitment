@@ -1,0 +1,41 @@
+// ============================================================================
+// 页头
+// ============================================================================
+
+#blogTitle {
+    position: unset;
+
+    h2 {
+        display: none;
+    }
+
+    h1 a:hover {
+        text-decoration: none;
+    }
+}
+
+#Header1_HeaderTitle {
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+    margin-right: $gap;
+    margin-left: 75px;
+    font-family: $font-sans-serif;
+    font-size: 50px;
+    font-weight: 200;
+    line-height: 1;
+    text-align: right;
+    word-break: keep-all;
+}
+
+#navigator {
+    width: 100%;
+
+    > .hui-d2 {
+        min-width: unset;
+    }
+}
+
+#navList {
+    font-size: unset;
+}
