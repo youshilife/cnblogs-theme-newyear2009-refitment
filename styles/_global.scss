@@ -75,3 +75,17 @@
         width: 980px;
     }
 }
+
+// 移除广告
+// ------------------------------------
+
+// 文章详情页评论区下方的推荐广告
+#ad_text_under_commentbox,
+#cnblogs_ch,
+#cnblogs_c1,
+#cnblogs_c2,
+#under_post_card1,
+#under_post_card2,
+#HistoryToday {
+    display: none;
+}
