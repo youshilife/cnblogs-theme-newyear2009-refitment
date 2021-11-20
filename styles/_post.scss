@@ -2,6 +2,10 @@
 // 文章详情页
 // ============================================================================
 
+// ====================================
+// 文章内容区
+// ====================================
+
 #topics {
     float: unset;
     width: unset;
@@ -22,6 +26,42 @@
         padding: 0;
     }
 }
+
+// 正文内容
+#cnblogs_post_body {
+    // 引用块
+    blockquote {
+        font-family: $font-cursive;
+    }
+
+    // 加重
+    strong {
+        color: #e45649;
+    }
+
+    // 代码
+    pre, code {
+        font-family: $font-monospace;
+    }
+
+    // 代码块
+    pre code.hljs {
+        font-size: 12px;
+        line-height: 1.4;
+        tab-size: 4;
+    }
+
+    // 内联代码
+    p, blockquote {
+        code {
+            color: #c18401;
+        }
+    }
+}
+
+// ====================================
+// 评论区
+// ====================================
 
 #comment_form {
     padding: 15px;

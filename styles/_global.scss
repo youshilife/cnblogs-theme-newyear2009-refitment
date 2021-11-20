@@ -7,8 +7,17 @@
 }
 
 body {
+    color: #212529; // 取自Bootstrap
     font-family: $font-sans-serif;
     background-image: url("https://images.cnblogs.com/cnblogs_com/blogs/700939/galleries/2065578/o_211119210140_bg.png");
+}
+
+pre, code {
+    font-family: $font-monospace;
+}
+
+em {
+    font-style: italic;
 }
 
 // ====================================
