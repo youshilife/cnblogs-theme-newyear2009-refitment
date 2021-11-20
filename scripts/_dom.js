@@ -103,31 +103,61 @@ function handleDayList() {
  * 处理文章详情。
  */
 function handlePost() {
-    let postDetail = document.querySelector("#post_detail");
+    if (window.xData.post.isPost) {
+        let postDetail = document.querySelector("#post_detail");
 
-    /**
-     * 处理文章信息内容。
-     */
-    let postDesc = postDetail.querySelector(".postDesc");
-    let html = postDesc.innerHTML.trim();
-    // 移除“posted”
-    html = html.replace("posted @", "");
-    // 替换“&nbsp;”为空格
-    html = html.replaceAll("&nbsp;", " ");
-    // 包裹发布时间和作者
-    html = `<div class="x-post-time-author">${html.substring(0, html.indexOf("</a>") + "</a>".length)}</div>
+        /**
+         * 处理文章信息内容。
+         */
+        let postDesc = postDetail.querySelector(".postDesc");
+        let html = postDesc.innerHTML.trim();
+        // 移除“posted”
+        html = html.replace("posted @", "");
+        // 替换“&nbsp;”为空格
+        html = html.replaceAll("&nbsp;", " ");
+        // 包裹发布时间和作者
+        html = `<div class="x-post-time-author">${html.substring(0, html.indexOf("</a>") + "</a>".length)}</div>
 ${html.substring(html.indexOf("</a>") + "</a>".length)}`;
-    postDesc.innerHTML = html;
+        postDesc.innerHTML = html;
+
+        /**
+         * 调整DOM结构
+         */
+        // 将文章信息元素移动到紧跟正文之后
+        let postBody = postDetail.querySelector("#cnblogs_post_body");
+        postBody.parentElement.insertBefore(postDesc, postBody.nextSibling);
+        // 将分类和标签元素移动到文章信息元素中
+    }
+}
+
+/**
+ * 处理博主信息。
+ */
+function handleOwner() {
+    /**
+     * 监听原生统计的加载，加载时设置统计数据
+     */
+    let blogStats = document.querySelector("#navigator .blogStats");
+    let listener = function (event) {
+        // DOMNodeInserted事件会多次触发，为了避免重复操作，在第一次触发时移除监听器，使得事件处理只做一次
+        blogStats.removeEventListener("DOMNodeInserted", listener);
+
+        let text = blogStats.textContent.replaceAll("\n", "").trim();
+        console.info(text);
+        window.xData.site.postCount = text.match(/随笔- (\d+)/)[1];
+        window.xData.site.readCount = text.match(/阅读- (\d+)/)[1];
+        window.xData.site.commentCount = text.match(/评论- (\d+)/)[1];
+    };
+    blogStats.addEventListener("DOMNodeInserted", listener);
 
     /**
-     * 调整DOM结构
+     * 移动DOM到侧边栏
      */
-    // 将文章信息元素移动到紧跟正文之后
-    let postBody = postDetail.querySelector("#cnblogs_post_body");
-    postBody.parentElement.insertBefore(postDesc, postBody.nextSibling);
-    // 将分类和标签元素移动到文章信息元素中
-
+    let ownerElem = document.querySelector("#x-owner");
+    let sidebar = document.querySelector("#sideBarMain");
+    sidebar.prepend(ownerElem);
 }
+
 
 setAccessMode();
 
@@ -135,3 +165,4 @@ handleLinks();
 handleNavbar();
 handleDayList();
 handlePost();
+handleOwner();

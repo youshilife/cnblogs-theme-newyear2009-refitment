@@ -4,6 +4,12 @@
  * ============================================================================
  */
 
+/**
+ * ====================================
+ * 定义数据结构
+ * ====================================
+ */
+
 window.xData = {
     // 网站数据
     site: {
@@ -19,6 +25,12 @@ window.xData = {
         title: null,
         // 副标题
         subtitle: null,
+        // 文章数
+        _postCount: null,
+        // 阅读数
+        _readCount: null,
+        // 评论数
+        _commentCount: null,
     },
     // 文章
     post: {
@@ -32,7 +44,9 @@ window.xData = {
     // 博主数据
     owner: {
         // 名称
-        name: null,
+        _name: null,
+        // 头像
+        _avatarUrl: null,
     },
     // 当前访客数据
     visitor: {
@@ -47,7 +61,67 @@ window.xData = {
 
 /**
  * ====================================
- * 载入可直接从页面获取的数据
+ * 设置getter和setter，实现数据自动同步
+ * ====================================
+ */
+
+Object.defineProperties(window.xData.site, {
+    postCount: {
+        get() {
+            return window.xData.site._postCount;
+        },
+        set(value) {
+            window.xData.site._postCount = value;
+            document.querySelector("#x-owner .x-post-count .x-value").textContent = value;
+        },
+    },
+
+    readCount: {
+        get() {
+            return window.xData.site._readCount;
+        },
+        set(value) {
+            window.xData.site._readCount = value;
+            document.querySelector("#x-owner .x-read-count .x-value").textContent = value;
+        },
+    },
+
+    commentCount: {
+        get() {
+            return window.xData.site._commentCount;
+        },
+        set(value) {
+            window.xData.site._commentCount = value;
+            document.querySelector("#x-owner .x-comment-count .x-value").textContent = value;
+        },
+    },
+});
+
+Object.defineProperties(window.xData.owner, {
+    name: {
+        get() {
+            return window.xData.owner._name;
+        },
+        set(value) {
+            window.xData.owner._name = value;
+            document.querySelector("#x-owner .x-name a").textContent = value;
+        },
+    },
+
+    avatarUrl: {
+        get() {
+            return window.xData.owner._avatarUrl;
+        },
+        set(value) {
+            window.xData.owner._avatarUrl = value;
+            document.querySelector("#x-owner .x-avatar img").src = value;
+        },
+    },
+});
+
+/**
+ * ====================================
+ * 载入加载时就能确定的数据
  * ====================================
  */
 
@@ -69,9 +143,10 @@ window.xData.owner.name = (function () {
     let name = footer.innerHTML.match(/Copyright .*? \d{4} (.+?)\n/i)[1];
     return name;
 })();
+window.xData.owner.avatarUrl = "https://pic.cnblogs.com/avatar/2512137/20210902193410.png";
 
 window.xData.visitor.guid = window.visitorUserId;
 window.xData.visitor.isLogined = window.isLogined;
 window.xData.visitor.isOwner = window.isBlogOwner;
 
-console.debug("页面原生数据已载入");
+console.debug("页面初始数据已载入");
