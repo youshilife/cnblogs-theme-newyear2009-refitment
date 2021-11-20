@@ -23,7 +23,19 @@ function setAccessMode() {
     }
 }
 
+/**
+ * 移除文章信息中的`posted`文本。
+ */
+ function removePosted() {
+    console.debug(`移除.postDesc元素中的"posted @"`);
+    let descs = document.querySelectorAll(".postDesc");
+    for (let desc of descs) {
+        desc.innerHTML = desc.innerHTML.replace("posted @", "");
+    }
+}
+
 setAccessMode();
+removePosted();
 
 /**
  * ====================================
