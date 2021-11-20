@@ -9,7 +9,7 @@
 #topics {
     float: unset;
     width: unset;
-    padding: 15px;
+    padding: 0;
 
     .h1PostTitle {
         height: unset;
@@ -64,7 +64,6 @@
 // ====================================
 
 #comment_form {
-    padding: 15px;
     margin: 0;
 
     .comment_textarea {
