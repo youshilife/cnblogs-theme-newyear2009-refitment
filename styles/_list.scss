@@ -14,14 +14,18 @@
 
         // 天标题
         .dayTitle {
-            margin: 0;
-            margin-bottom: 10px;
+            padding-left: 15px - 5px;
+            border-left: 5px solid #8e1a10;
+            margin: 0 0 0 -15px;
+            line-height: 1.2;
             text-indent: 0;
         }
 
         // 文章标题
         .postTitle {
+            border: none;
             margin: 10px 0 10px -15px;
+            @include text-ellipsis;
         }
 
         // 文章内容
