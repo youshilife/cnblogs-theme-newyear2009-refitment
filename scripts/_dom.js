@@ -30,6 +30,8 @@ function addNavbarItems() {
     let navList = document.querySelector("#navList");
     let items = document.querySelectorAll("#x-navbar-items > li");
     for (let item of items) {
+        item.firstElementChild.href =
+            item.firstElementChild.href.replace(window.xData.site.cnblogsUrl, window.xData.site.homeUrl);
         navList.append(item);
     }
 }
