@@ -143,7 +143,6 @@ function handleOwner() {
         blogStats.removeEventListener("DOMNodeInserted", listener);
 
         let text = blogStats.textContent.replaceAll("\n", "").trim();
-        console.info(text);
         window.xData.site.postCount = text.match(/随笔- (\d+)/)[1];
         window.xData.site.readCount = text.match(/阅读- (\d+)/)[1];
         window.xData.site.commentCount = text.match(/评论- (\d+)/)[1];

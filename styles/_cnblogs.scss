@@ -21,6 +21,8 @@ body.x-mode-visitor {
     #blog_nav_newpost,
     // 导航栏管理链接
     #blog_nav_admin,
+    // 侧边栏日历
+    #calendar,
     // 编辑文章链接
     a[href*="EditPosts.aspx"] {
         display: none;
