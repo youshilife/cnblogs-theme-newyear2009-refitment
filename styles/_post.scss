@@ -1,0 +1,37 @@
+// ============================================================================
+// 文章详情页
+// ============================================================================
+
+#topics {
+    float: unset;
+    width: unset;
+    padding: 15px;
+
+    .h1PostTitle {
+        height: unset;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #eee;
+        margin: 0;
+        margin-bottom: 15px;
+        font-size: 20px;
+        line-height: 2;
+        text-align: center;
+    }
+
+    .postBody {
+        padding: 0;
+    }
+}
+
+#comment_form {
+    padding: 15px;
+    margin: 0;
+
+    .comment_textarea {
+        width: unset;
+    }
+}
+
+#tbCommentBody {
+    height: 150px;
+}

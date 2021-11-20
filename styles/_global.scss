@@ -11,8 +11,9 @@ body {
     background-image: url("https://images.cnblogs.com/cnblogs_com/blogs/700939/galleries/2065578/o_211119210140_bg.png");
 }
 
+// ====================================
 // 重构页面整体的响应式结构
-// ------------------------------------
+// ====================================
 
 #home {
     width: unset;
@@ -37,12 +38,14 @@ body {
 
     // 主要内容区
     > .hui-main {
+        flex-grow: 1;
         float: unset;
         width: unset;
         margin: 0;
 
         > .hui-b {
             margin: 0;
+            width: 100%;
         }
     }
 
