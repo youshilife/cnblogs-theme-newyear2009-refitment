@@ -1,0 +1,36 @@
+// ============================================================================
+// 侧边栏
+// ============================================================================
+
+#sideBarMain {
+    padding: 15px;
+}
+
+// 新闻与博主信息
+
+#sidebar_news {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 15px;
+
+    .newsItem {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+#profile_block {
+    margin: 0;
+}
+
+// 日历
+
+#calendar {
+    margin: 15px 0;
+}
+
+// 更多栏目
+
+#leftcontentcontainer {
+    margin: 15px 0;
+}
