@@ -20,6 +20,15 @@ window.xData = {
         // 副标题
         subtitle: null,
     },
+    // 文章
+    post: {
+        // 当前页面是否是文章详情页
+        isPost: null,
+        // 文章标题
+        title: null,
+        // 发布时间
+        postTime: null,
+    },
     // 博主数据
     owner: {
         // 名称
@@ -48,6 +57,12 @@ window.xData.site.cnblogsUrl = "https://www.cnblogs.com/";
 window.xData.site.homeUrl = `${window.xData.site.cnblogsUrl}/${window.xData.site.nameId}/`;
 window.xData.site.title = document.querySelector("#Header1_HeaderTitle").textContent;
 window.xData.site.subtitle = document.querySelector("#blogTitle h2").textContent;
+
+window.xData.post.isPost = !!window.currentPostDateAdded;
+if (window.xData.post.isPost) {
+    window.xData.post.title = document.querySelector("#cb_post_title_url").textContent.trim();
+    window.xData.post.postTime = new Date(Date.parse(document.querySelector("#post-date").textContent));
+}
 
 window.xData.owner.name = (function () {
     let footer = document.querySelector("#footer");
