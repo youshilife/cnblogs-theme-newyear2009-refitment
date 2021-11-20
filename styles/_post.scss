@@ -51,14 +51,52 @@
     }
 
     // 调整各块元素的间距
-    p, blockquote, pre {
-        margin: 15px 0;
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    // 大纲标题
+    h1 {
+        color: #8e1a10;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        color: #6c757d;
+        font-size: 16px;
+    }
+
+    h4 {
+        color: #adb5bd;
+        font-size: 14px;
+    }
+
+    h5 {
+        color: #ced4da;
+        font-size: 14px;
+    }
+
+    h6 {
+        color: #ced4da;
+        font-size: 12px;
     }
 
     // 引用块
     blockquote {
         padding: 0 15px;
         font-family: $font-cursive;
+    }
+
+    // 列表
+    ul, ol {
+        padding: 0;
+        margin-left: 30px;
     }
 
     // 加重
@@ -74,18 +112,30 @@
     // 代码块
     pre code.hljs {
         overflow-x: auto;
-        font-size: 12px;
         line-height: 1.4;
         tab-size: 4;
     }
 
-    // 内联代码
-    p, blockquote {
+    p, blockquote, li {
+        // 图片
+        img {
+            display: block;
+            max-width: calc(100% - 2px) !important;
+            border: 5px solid #fafafa;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+        }
+
+        // 内联代码
         code {
             display: inline;
             padding: 0;
             background: none;
             color: #c18401;
+            font-size: 14px;
+            line-height: 1.5;
+            vertical-align: unset;
         }
     }
 }
