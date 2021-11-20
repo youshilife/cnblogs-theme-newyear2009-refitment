@@ -1,0 +1,118 @@
+// ============================================================================
+// 博客园系统样式
+// ============================================================================
+
+// ====================================
+// 顶部导航条
+// ====================================
+
+// 顶部导航条高度
+$top-nav-height: 45px;
+
+body {
+    margin-top: $top-nav-height;
+}
+
+#top_nav {
+    display: flex !important;
+    justify-content: center;
+    height: $top-nav-height;
+    padding: 0 $gap;
+    border: none;
+    box-shadow: $box-shadow-sm;
+}
+
+#nav_left {
+    .navbar-branding {
+        width: unset;
+        margin: 0;
+        margin-right: 15px;
+
+        img {
+            margin: 0;
+        }
+    }
+
+    > li:not(.navbar-branding) {
+        display: none;
+    }
+}
+
+#nav_right {
+    > li:not(#navbar_login_status) {
+        display: none;
+    }
+}
+
+#navbar_login_status {
+    min-width: unset !important;
+}
+
+#zzk_search {
+    padding-left: $gap;
+    padding-right: $gap - 6px; // 搜索图标右侧已有6px的padding
+}
+
+@media (min-width: 769px) {
+    #nav_left {
+        > li:not(.navbar-branding) {
+            display: unset;
+            margin-left: 15px;
+        }
+    }
+
+    #nav_right {
+        > li:not(#navbar_login_status) {
+            display: unset;
+        }
+    }
+
+    #navbar_login_status {
+        margin-left: 15px;
+
+        > a {
+            margin-left: 15px !important;
+        }
+    }
+
+    #user_info {
+        margin-left: 15px !important;
+    }
+}
+
+@media (min-width: 981px) {
+    #nav_main {
+        width: 980px;
+    }
+
+    #nav_left {
+        > li:not(.navbar-branding) {
+            margin-left: 20px;
+        }
+    }
+
+    #navbar_login_status {
+        > a, a.navbar-anonymous {
+            margin-left: 20px !important;
+        }
+    }
+
+    #user_info {
+        margin-left: 20px !important;
+    }
+}
+
+// ====================================
+// 移除广告
+// ====================================
+
+// 文章详情页评论区下方的推荐广告
+#ad_text_under_commentbox,
+#cnblogs_ch,
+#cnblogs_c1,
+#cnblogs_c2,
+#under_post_card1,
+#under_post_card2,
+#HistoryToday {
+    display: none;
+}
