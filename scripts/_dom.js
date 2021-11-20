@@ -5,12 +5,6 @@
  */
 
 /**
- * ====================================
- * 处理现有DOM
- * ====================================
- */
-
-/**
  * 设置访问模式。
  */
 function setAccessMode() {
@@ -21,6 +15,36 @@ function setAccessMode() {
         console.debug("访问模式：访客");
         document.body.classList.add("x-mode-visitor");
     }
+}
+
+/**
+ * ====================================
+ * 调整内容
+ * ====================================
+ */
+
+/**
+ * 添加导航栏项目。
+ */
+function addNavbarItems() {
+    let navList = document.querySelector("#navList");
+    let items = document.querySelectorAll("#x-navbar-items > li");
+    for (let item of items) {
+        navList.append(item);
+    }
+}
+
+/**
+ * 重新排序导航栏项目。
+ */
+function resortNavbarItems() {
+    let navList = document.querySelector("#navList");
+    let contactItem = document.querySelector("#blog_nav_contact").parentElement;
+    navList.append(contactItem);
+    let newPostItem = document.querySelector("#blog_nav_newpost").parentElement;
+    navList.append(newPostItem);
+    let adminItem = document.querySelector("#blog_nav_admin").parentElement;
+    navList.append(adminItem);
 }
 
 /**
@@ -35,10 +59,6 @@ function setAccessMode() {
 }
 
 setAccessMode();
+addNavbarItems();
+resortNavbarItems();
 removePosted();
-
-/**
- * ====================================
- * 创建新DOM结构
- * ====================================
- */

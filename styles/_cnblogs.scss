@@ -2,6 +2,10 @@
 // 博客园系统样式
 // ============================================================================
 
+#x-dom-templates {
+    display: none;
+}
+
 // ====================================
 // 访问模式
 // ====================================
@@ -13,6 +17,10 @@ a[onclick*="reportManager.report"] {
 
 // 访客模式
 body.x-mode-visitor {
+    // 导航栏创建新文章链接
+    #blog_nav_newpost,
+    // 导航栏管理链接
+    #blog_nav_admin,
     // 编辑文章链接
     a[href*="EditPosts.aspx"] {
         display: none;
