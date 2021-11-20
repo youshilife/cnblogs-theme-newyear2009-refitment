@@ -10,14 +10,14 @@
 $top-nav-height: 45px;
 
 body {
-    margin-top: $top-nav-height;
+    margin-top: $top-nav-height !important;
 }
 
 #top_nav {
     display: flex !important;
     justify-content: center;
     height: $top-nav-height;
-    padding: 0 $gap;
+    padding: 0 15px;
     border: none;
     box-shadow: $box-shadow-sm;
 }

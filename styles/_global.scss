@@ -24,6 +24,8 @@ em {
 // 重构页面整体的响应式结构
 // ====================================
 
+$sidebar-width: 240px;
+
 #home {
     width: unset;
     background: unset;
@@ -81,8 +83,12 @@ em {
     #body {
         flex-direction: row;
 
+        > .hui-main {
+            width: calc(100% - #{$sidebar-width});
+        }
+
         > .hui-b {
-            flex-basis: 240px;
+            flex-basis: $sidebar-width;
             flex-shrink: 0;
         }
     }

@@ -11,14 +11,15 @@
     width: unset;
     padding: 0;
 
+    // 文章标题
     .h1PostTitle {
         height: unset;
-        padding-bottom: 15px;
+        padding: 15px 30px 30px;
         border-bottom: 2px solid #eee;
         margin: 0;
         margin-bottom: 15px;
         font-size: 20px;
-        line-height: 2;
+        line-height: 1.25;
         text-align: center;
     }
 
@@ -29,8 +30,34 @@
 
 // 正文内容
 #cnblogs_post_body {
+    border-bottom: 2px solid #eee;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    text-align: justify;
+
+    // 文章结束标记印章
+    &::after {
+        content: "完";
+        display: block;
+        width: 16px;
+        height: 16px;
+        border-radius: 2px;
+        margin: 15px 0 15px auto;
+        background-color: #8e1a10;
+        color: #fff;
+        font-size: 12px;
+        line-height: 16px;
+        text-align: center;
+    }
+
+    // 调整各块元素的间距
+    p, blockquote, pre {
+        margin: 15px 0;
+    }
+
     // 引用块
     blockquote {
+        padding: 0 15px;
         font-family: $font-cursive;
     }
 
@@ -46,6 +73,7 @@
 
     // 代码块
     pre code.hljs {
+        overflow-x: auto;
         font-size: 12px;
         line-height: 1.4;
         tab-size: 4;
@@ -54,6 +82,9 @@
     // 内联代码
     p, blockquote {
         code {
+            display: inline;
+            padding: 0;
+            background: none;
             color: #c18401;
         }
     }
