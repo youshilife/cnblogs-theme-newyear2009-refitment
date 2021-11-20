@@ -8,8 +8,8 @@
  * 设置访问模式。
  */
 function setAccessMode() {
-    if (window.isBlogOwner) {
-        console.debug("访问模式：主人");
+    if (window.xData.visitor.isOwner) {
+        console.debug("访问模式：博主");
         document.body.classList.add("x-mode-owner");
     } else {
         console.debug("访问模式：访客");

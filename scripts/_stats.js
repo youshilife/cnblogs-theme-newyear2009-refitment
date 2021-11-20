@@ -23,8 +23,8 @@ function loadBaiduTongji(token) {
     })();
 }
 
-// 如果访问者不是博主，则加载统计组件
-if (!window.isBlogOwner) {
+// 如果访问者不是博主，且未禁用统计，则加载统计组件
+if (!window.xData.visitor.isOwner && !window.xData.site.disableStats) {
     console.debug("加载统计组件");
     loadBaiduTongji(BAIDU_TONGJI_TOKEN);
 }

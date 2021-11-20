@@ -31,6 +31,8 @@ window.xData = {
         _readCount: null,
         // 评论数
         _commentCount: null,
+        // 是否禁用数据统计
+        disableStats: null,
     },
     // 文章
     post: {
@@ -131,6 +133,17 @@ window.xData.site.cnblogsUrl = "https://www.cnblogs.com/";
 window.xData.site.homeUrl = `${window.xData.site.cnblogsUrl}/${window.xData.site.nameId}/`;
 window.xData.site.title = document.querySelector("#Header1_HeaderTitle").textContent;
 window.xData.site.subtitle = document.querySelector("#blogTitle h2").textContent;
+window.xData.site.disableStats = (function () {
+    if (localStorage.disableStats) {
+        console.debug("统计组件已禁用");
+        return true;
+    } else if (location.href.indexOf("disableStats") >= 0) {
+        localStorage.disableStats = true;
+        console.debug("统计组件已禁用");
+        return true;
+    }
+    return false;
+})();
 
 window.xData.post.isPost = !!window.currentPostDateAdded;
 if (window.xData.post.isPost) {
