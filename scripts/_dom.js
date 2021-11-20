@@ -51,13 +51,32 @@ function handleNavbar() {
 }
 
 /**
- * 处理文章信息结构。
+ * 处理日期文章列表。
  */
-function handlePostDesc() {
+function handleDayList() {
+    /**
+     * 处理文章摘要
+     */
+
+    let summaries = document.querySelectorAll(".day .c_b_p_desc");
+    for (let elem of summaries) {
+        let html = elem.innerHTML.trim();
+        // 移除“摘要”
+        html = html.replace(/^摘要：/, "");
+        // 包裹“阅读全文”
+        html = `${html.substring(0, html.indexOf("<"))}……
+<div class="x-read-more">${html.substring(html.indexOf("<"))}</div>`;
+
+        elem.innerHTML = html;
+    }
+
+    /**
+     * 处理文章信息
+     */
     let descs = document.querySelectorAll(".day .postDesc");
     for (let elem of descs) {
         let html = elem.innerHTML;
-        // 移除""posted"
+        // 移除“posted”
         html = html.replace("posted @", "");
         // 移除作者名
         html = html.replace(window.xData.owner.name, "");
@@ -71,4 +90,4 @@ function handlePostDesc() {
 
 setAccessMode();
 handleNavbar();
-handlePostDesc();
+handleDayList();

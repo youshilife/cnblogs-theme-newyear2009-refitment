@@ -32,6 +32,19 @@
         .postCon {
             margin: 10px 0;
             text-align: justify;
+
+            .x-read-more {
+                margin-top: 5px;
+
+                a {
+                    padding: 0;
+                    color: #8e1a10;
+
+                    &::after {
+                        content: " »";
+                    }
+                }
+            }
         }
 
         // 文章描述信息
