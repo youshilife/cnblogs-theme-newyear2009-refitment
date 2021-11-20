@@ -24,23 +24,24 @@ function setAccessMode() {
  */
 
 /**
- * 添加导航栏项目。
+ * 处理导航栏。
  */
-function addNavbarItems() {
+function handleNavbar() {
     let navList = document.querySelector("#navList");
-    let items = document.querySelectorAll("#x-navbar-items > li");
-    for (let item of items) {
+
+    /**
+     * 添加新导航项
+     */
+    let newItems = document.querySelectorAll("#x-navbar-items > li");
+    for (let item of newItems) {
         item.firstElementChild.href =
             item.firstElementChild.href.replace(window.xData.site.cnblogsUrl, window.xData.site.homeUrl);
         navList.append(item);
     }
-}
 
-/**
- * 重新排序导航栏项目。
- */
-function resortNavbarItems() {
-    let navList = document.querySelector("#navList");
+    /**
+     * 调整导航项顺序
+     */
     let contactItem = document.querySelector("#blog_nav_contact").parentElement;
     navList.append(contactItem);
     let newPostItem = document.querySelector("#blog_nav_newpost").parentElement;
@@ -50,17 +51,24 @@ function resortNavbarItems() {
 }
 
 /**
- * 移除文章信息中的`posted`文本。
+ * 处理文章信息结构。
  */
- function removePosted() {
-    console.debug(`移除.postDesc元素中的"posted @"`);
-    let descs = document.querySelectorAll(".postDesc");
-    for (let desc of descs) {
-        desc.innerHTML = desc.innerHTML.replace("posted @", "");
+function handlePostDesc() {
+    let descs = document.querySelectorAll(".day .postDesc");
+    for (let elem of descs) {
+        let html = elem.innerHTML;
+        // 移除""posted"
+        html = html.replace("posted @", "");
+        // 移除作者名
+        html = html.replace(window.xData.owner.name, "");
+        // 包裹时间
+        let time = html.substring(0, html.indexOf("<"));
+        html = `<span class="x-post-time">${time}</span>${html.substring(html.indexOf("<"))}`;
+
+        elem.innerHTML = html;
     }
 }
 
 setAccessMode();
-addNavbarItems();
-resortNavbarItems();
-removePosted();
+handleNavbar();
+handlePostDesc();
