@@ -44,9 +44,8 @@ ${html.substring(0, html.indexOf("<"))}……
             // 移除作者名
             html = html.replace(xData.owner.name, "");
             // 包裹时间
-            let time = html.substring(0, html.indexOf("<"));
             html = `
-<span class="x-publish-time">${time}</span>
+<span class="x-publish-time">${html.substring(0, html.indexOf("<"))}</span>
 ${html.substring(html.indexOf("<"))}
 `;
 
@@ -72,6 +71,11 @@ if (myPosts) {
             let html = elem.innerHTML.trim();
             // 移除作者名
             html = html.replace(xData.owner.name, "");
+            // 包裹时间
+            html = `
+<span class="x-publish-time">${html.substring(0, html.indexOf("<"))}</span>
+${html.substring(html.indexOf("<"))}
+`;
 
             elem.innerHTML = html;
         }

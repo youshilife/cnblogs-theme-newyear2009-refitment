@@ -81,7 +81,30 @@
         margin: 0 0 15px;
 
         .postTitl2 {
+            float: unset;
+            margin-bottom: 5px;
+            font-size: 14px;
             font-weight: bold;
+        }
+
+        .postDesc2 {
+            float: unset;
+            text-align: right;
+
+            .x-publish-time {
+                float: left;
+            }
+
+            .post-view-count,
+            .post-comment-count,
+            .post-digg-count {
+                margin-left: 5px;
+            }
+
+            a {
+                color: #8e1a10;
+                margin-left: 5px;
+            }
         }
     }
 }
