@@ -111,6 +111,15 @@
     margin: 15px 0;
 }
 
+// 常用链接
+body.x-mode-visitor {
+    a[href*="MyComments.html"],
+    a[href*="OtherPosts.html"],
+    #itemListLink {
+        display: none;
+    }
+}
+
 // 更多栏目
 
 #leftcontentcontainer {
