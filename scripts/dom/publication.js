@@ -27,7 +27,7 @@ if (xData.page.isPublication) {
             html = html.replaceAll("&nbsp;", " ");
             // 包裹发布时间和作者
             html = `
-<div class="x-post-time-author">
+<div class="x-publish-time-author">
     ${html.substring(0, html.indexOf("</a>") + "</a>".length)}
 </div>
 ${html.substring(html.indexOf("</a>") + "</a>".length)}

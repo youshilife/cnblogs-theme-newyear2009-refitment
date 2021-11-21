@@ -46,7 +46,7 @@ ${html.substring(0, html.indexOf("<"))}……
             // 包裹时间
             let time = html.substring(0, html.indexOf("<"));
             html = `
-<span class="x-post-time">${time}</span>
+<span class="x-publish-time">${time}</span>
 ${html.substring(html.indexOf("<"))}
 `;
 
