@@ -20,6 +20,11 @@ import {removeNodes} from "./utils";
         console.debug("【访问模式】访客");
         document.body.classList.add("x-mode-visitor");
     }
+
+    if (xData.page.isArticle) {
+        console.debug("【页面模式】文章");
+        document.body.classList.add("x-page-article");
+    }
 }
 
 /**

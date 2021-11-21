@@ -161,3 +161,21 @@
 #tbCommentBody {
     height: 150px;
 }
+
+// ====================================
+// 文章
+// ====================================
+
+body.x-page-article {
+    .postDesc,
+    #blog_post_info_block,
+    #comment_form,
+    #cnblogs_post_body::after {
+        display: none;
+    }
+
+    .postBody,
+    #cnblogs_post_body {
+        border: none;
+    }
+}
