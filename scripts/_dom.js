@@ -100,6 +100,22 @@ function handleDayList() {
 }
 
 /**
+ * 处理“我的随笔”文章列表。
+ */
+function handleMyPostsList() {
+    let myPosts = document.querySelector("#myposts");
+    if (myPosts) {
+        let descs = myPosts.querySelectorAll(".postDesc2");
+        for (let elem of descs) {
+            let html = elem.innerHTML.trim();
+            // 移除作者名
+            html = html.replace(xData.owner.name, "");
+            elem.innerHTML = html;
+        }
+    }
+}
+
+/**
  * 处理文章详情。
  */
 function handlePost() {
@@ -163,5 +179,6 @@ setAccessMode();
 handleLinks();
 handleNavbar();
 handleDayList();
+handleMyPostsList();
 handlePost();
 handleOwner();

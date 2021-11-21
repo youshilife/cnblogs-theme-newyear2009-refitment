@@ -59,3 +59,29 @@
         }
     }
 }
+
+// ====================================
+// 我的随笔
+// ====================================
+
+#body .PostListTitle {
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 18px;
+    line-height: 2;
+    text-align: left;
+}
+
+#myposts {
+    margin: 15px 0;
+
+    .PostList {
+        padding: 0;
+        border: none;
+        margin: 0 0 15px;
+
+        .postTitl2 {
+            font-weight: bold;
+        }
+    }
+}
