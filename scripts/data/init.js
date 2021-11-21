@@ -64,6 +64,8 @@ if (xData.page.isPublication) {
  * ====================================
  */
 
+xData.owner.homeUrl = `https://home.cnblogs.com/u/${xData.blog.nameId}`;
+
 xData.owner.name = (() => {
     let footer = document.querySelector("#footer");
     let name = footer.innerHTML.match(/Copyright .*? \d{4} (.+?)\n/i)[1];

@@ -4,7 +4,7 @@
  * ============================================================================
  *
  * 非`_`开头的属性表明可以立即加载，且只读。
- * 以`_`开头的属性表明有getter和setter方法，是延迟加载的。
+ * 以`_`开头的属性表明有getter和setter方法，需要同步到视图。
  *
  */
 
@@ -28,11 +28,11 @@ window.xData = {
         // 百度统计令牌
         baiduTongjiToken: null,
 
-        // 随笔总数
+        // 随笔数
         _postCount: null,
-        // 阅读总数
+        // 阅读数
         _readCount: null,
-        // 评论总数
+        // 评论数
         _commentCount: null,
     },
     // 当前页面数据
@@ -52,10 +52,19 @@ window.xData = {
     },
     // 博主数据
     owner: {
+        // 账号注册日期
+        registerDate: null,
+        // 粉丝数
+        fansCount: null,
+        // 关注数
+        followCount: null,
+
         // 博主昵称
         _name: null,
         // 博主头像地址
         _avatarUrl: null,
+        // 个人主页地址
+        _homeUrl: null,
     },
     // 当前访客数据
     visitor: {

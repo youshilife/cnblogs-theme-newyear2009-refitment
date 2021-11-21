@@ -26,9 +26,38 @@
             }
         }
 
-        .x-name {
-            margin-top: 10px;
-            font-weight: bold;
+        .x-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .x-name {
+                margin-top: 5px;
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            .x-follow {
+                margin-bottom: 5px;
+
+                .x-button {
+                    display: inline-block;
+                    padding: 3px 8px;
+                    border-radius: 1px;
+                    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+                    color: #fff;
+                    font-size: 12px;
+                    text-decoration: none;
+
+                    &.x-add {
+                        background-color: #e33100;
+                    }
+
+                    &.x-cancel {
+                        background-color: #ccc;
+                    }
+                }
+            }
         }
     }
 
@@ -64,7 +93,6 @@
 #sidebar_news {
     padding: 0;
     margin: 0;
-    margin-bottom: 15px;
 
     .newsItem {
         padding: 0;
@@ -73,6 +101,7 @@
 }
 
 #profile_block {
+    display: none;
     margin: 0;
 }
 
@@ -85,5 +114,4 @@
 // 更多栏目
 
 #leftcontentcontainer {
-    margin: 15px 0;
 }

@@ -72,4 +72,15 @@ Object.defineProperties(xData.owner, {
             document.querySelector("#x-owner .x-avatar img").src = value;
         },
     },
+
+    homeUrl: {
+        get() {
+            return xData.owner._homeUrl;
+        },
+        set(value) {
+            xData.owner._homeUrl = value;
+            document.querySelector("#x-owner .x-avatar").href = value;
+            document.querySelector("#x-owner .x-name a").href = value;
+        },
+    },
 });
