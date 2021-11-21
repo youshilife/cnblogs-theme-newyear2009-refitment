@@ -17,7 +17,7 @@ let navList = document.querySelector("#navList");
     for (let item of items) {
         // 修正链接地址
         let link = item.firstElementChild;
-        link.href = link.href.replace(xData.blog.rootUrl, window.xData.blog.indexUrl);
+        link.href = link.href.replace(xData.blog.rootUrl, xData.blog.indexUrl);
 
         navList.append(item);
     }

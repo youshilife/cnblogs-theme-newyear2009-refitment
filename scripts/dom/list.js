@@ -42,7 +42,7 @@ ${html.substring(0, html.indexOf("<"))}……
             // 移除“posted”
             html = html.replace("posted @", "");
             // 移除作者名
-            html = html.replace(window.xData.owner.name, "");
+            html = html.replace(xData.owner.name, "");
             // 包裹时间
             let time = html.substring(0, html.indexOf("<"));
             html = `

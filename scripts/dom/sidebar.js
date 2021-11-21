@@ -20,9 +20,9 @@ import {whenReady} from "./utils";
         let blogStats = document.querySelector("#navigator .blogStats");
         whenReady(blogStats, "阅读", () => {
             let text = blogStats.textContent.replaceAll("\n", "").trim();
-            window.xData.blog.postCount = text.match(/随笔- (\d+)/)[1];
-            window.xData.blog.readCount = text.match(/阅读- (\d+)/)[1];
-            window.xData.blog.commentCount = text.match(/评论- (\d+)/)[1];
+            xData.blog.postCount = parseInt(text.match(/随笔- (\d+)/)[1]);
+            xData.blog.readCount = parseInt(text.match(/阅读- (\d+)/)[1]);
+            xData.blog.commentCount = parseInt(text.match(/评论- (\d+)/)[1]);
 
             console.debug("【数据】博客统计数据已加载");
         });
