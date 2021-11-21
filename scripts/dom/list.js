@@ -81,3 +81,50 @@ ${html.substring(html.indexOf("<"))}
         }
     }
 }
+
+/**
+ * ====================================
+ * 归档文章列表
+ * ====================================
+ */
+
+if (document.querySelector(".entrylist")) {
+    /*
+     * 处理摘要
+     */
+    {
+        let summaries = document.querySelectorAll(".entrylist .c_b_p_desc");
+        for (let elem of summaries) {
+            let html = elem.innerHTML.trim();
+            // 移除“摘要”
+            html = html.replace(/^摘要：/, "");
+            // 包裹“阅读全文”
+            html = `
+${html.substring(0, html.indexOf("<"))}……
+<div class="x-read-more">
+    ${html.substring(html.indexOf("<"))}
+</div>
+`;
+
+            elem.innerHTML = html;
+        }
+    }
+
+    /*
+     * 处理元数据
+     */
+    {
+        let metas = document.querySelectorAll(".entrylist .entrylistItemPostDesc");
+        for (let elem of metas) {
+            let html = elem.innerHTML;
+            // 移除“posted”
+            html = html.replace("posted @", "");
+            // 移除作者名
+            html = html.replace(xData.owner.name, "");
+
+            elem.innerHTML = html;
+            // 标记时间
+            elem.firstElementChild.classList.add("x-publish-time");
+        }
+    }
+}

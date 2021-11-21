@@ -9,8 +9,7 @@
 #body > .hui-main {
     .day {
         padding: 0;
-        margin: 0;
-        margin-bottom: 30px;
+        margin: 0 0 30px;
 
         // 天标题
         .dayTitle {
@@ -66,8 +65,8 @@
 
 #body .PostListTitle {
     padding: 0;
-    border-bottom: 1px solid #ccc;
-    font-size: 18px;
+    border-bottom: 3px solid #ccc;
+    font-size: 20px;
     line-height: 2;
     text-align: left;
 }
@@ -110,6 +109,68 @@
 }
 
 // ====================================
+// 归档列表
+// ====================================
+
+#body > .hui-main {
+    .entrylistTitle {
+        padding: 0;
+        border-bottom: 3px solid #ccc;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 2;
+        text-align: left;
+    }
+
+    .entrylist {
+        .entrylistItem {
+            padding: 0;
+            margin: 0 0 30px;
+
+            .entrylistPosttitle {
+                padding: 0 0 5px;
+                border-bottom: 1px solid #ddd;
+                margin: 0 0 10px;
+                font-size: 14px;
+            }
+
+            .entrylistPostSummary {
+                padding: 0;
+                margin: 10px 0;
+                text-align: justify;
+
+                .x-read-more {
+                    margin-top: 5px;
+
+                    a {
+                        padding: 0;
+                        color: #8e1a10;
+
+                        &::after {
+                            content: " »";
+                        }
+                    }
+                }
+            }
+
+            .entrylistItemPostDesc {
+                padding: 0;
+                margin: 10px 0;
+
+                .x-publish-time {
+                    float: left;
+                }
+
+                a:not(.x-publish-time) {
+                    padding: 0;
+                    color: #8e1a10;
+                }
+            }
+        }
+    }
+}
+
+// ====================================
 // 我的标签
 // ====================================
 
@@ -119,13 +180,14 @@
 
 #taglist_title {
     padding: 0;
-    border-bottom: 1px solid #ccc;
-    font-size: 18px;
+    border-bottom: 3px solid #ccc;
+    font-size: 20px;
     font-weight: bold;
     line-height: 2;
     text-align: left;
 
-    small {
+    small:last-of-type {
+        margin-top: 8px !important;
         font-size: 14px;
     }
 }
