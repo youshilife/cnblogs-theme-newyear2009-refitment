@@ -4,6 +4,7 @@
  * ============================================================================
  */
 
+import "./cnblogs";
 import "./global";
 import "./header";
 import "./sidebar";
