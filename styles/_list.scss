@@ -85,3 +85,36 @@
         }
     }
 }
+
+// ====================================
+// 我的标签
+// ====================================
+
+#taglist_main {
+    margin: 0;
+}
+
+#taglist_title {
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 2;
+    text-align: left;
+
+    small {
+        font-size: 14px;
+    }
+}
+
+#taglist {
+    tr {
+        display: inline-flex;
+        flex-wrap: wrap;
+    }
+
+    td {
+        width: 150px;
+        padding: 5px 0;
+    }
+}
