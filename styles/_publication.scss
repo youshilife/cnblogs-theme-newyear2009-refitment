@@ -19,7 +19,7 @@
         margin: 0;
         margin-bottom: 15px;
         font-size: 20px;
-        line-height: 1.25;
+        line-height: 1.5;
         text-align: center;
     }
 
@@ -38,7 +38,6 @@
 #cnblogs_post_body {
     border-bottom: 2px solid #eee;
     margin-bottom: 15px;
-    line-height: 1.5;
     text-align: justify;
 
     // 文章结束标记印章
@@ -118,7 +117,6 @@
     // 代码块
     pre code.hljs {
         overflow-x: auto;
-        line-height: 1.4;
         tab-size: 4;
     }
 
@@ -140,7 +138,6 @@
             background: none;
             color: #c18401;
             font-size: 14px;
-            line-height: 1.5;
             vertical-align: unset;
         }
     }
